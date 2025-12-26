@@ -1,0 +1,1 @@
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px 10px;margin:8px 0 12px}.filters input,.filters select{padding:8px;border:1px solid #ccc;border-radius:6px}.inline{display:flex;align-items:center;gap:6px}.filters button{padding:8px 10px;border:1px solid #c8d1e6;background:#eef3ff;color:#0b5ed7;border-radius:8px;cursor:pointer}

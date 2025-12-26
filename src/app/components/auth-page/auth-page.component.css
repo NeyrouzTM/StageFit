@@ -1,0 +1,7 @@
+.auth-page { max-width: 920px; margin: 0 auto; }
+header { margin-bottom: 12px; }
+.tabs { display: flex; gap: 8px; margin-bottom: 12px; }
+.tabs button { padding: 8px 12px; border: 1px solid #c8d1e6; background: #eef3ff; color: #0b5ed7; border-radius: 8px; cursor: pointer; }
+.tabs button.active { background: #0b5ed7; color: #fff; }
+.panes { display: grid; }
+.pane { padding: 8px; }

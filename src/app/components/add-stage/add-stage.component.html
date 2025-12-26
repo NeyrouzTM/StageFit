@@ -1,0 +1,115 @@
+<h2>Ajouter un nouveau stage</h2>
+
+<form [formGroup]="stageForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="ref">Référence:</label>
+    <input type="number" id="ref" formControlName="ref">
+    <div *ngIf="stageForm.get('ref')?.invalid && stageForm.get('ref')?.touched" class="error">
+      <small *ngIf="stageForm.get('ref')?.errors?.['required']">La référence est obligatoire.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="titre">Titre:</label>
+    <input type="text" id="titre" formControlName="titre">
+    <div *ngIf="stageForm.get('titre')?.invalid && stageForm.get('titre')?.touched" class="error">
+      <small *ngIf="stageForm.get('titre')?.errors?.['required']">Le titre est obligatoire.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description" rows="4"></textarea>
+    <div *ngIf="stageForm.get('description')?.invalid && stageForm.get('description')?.touched" class="error">
+      <small *ngIf="stageForm.get('description')?.errors?.['required']">La description est obligatoire.</small>
+      <small *ngIf="stageForm.get('description')?.errors?.['minlength']">La description doit contenir au moins 3 caractères.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="entreprise">Entreprise (Propriétaire):</label>
+    <input type="text" id="entreprise" formControlName="entreprise">
+    <div *ngIf="stageForm.get('entreprise')?.invalid && stageForm.get('entreprise')?.touched" class="error">
+      <small *ngIf="stageForm.get('entreprise')?.errors?.['required']">Le nom de l'entreprise est obligatoire.</small>
+      <small *ngIf="stageForm.get('entreprise')?.errors?.['capitalLetter']">Le nom doit commencer par une lettre majuscule.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="disponible">Disponible:</label>
+    <input type="checkbox" id="disponible" formControlName="disponible">
+  </div>
+
+  <div>
+    <label for="nbrInteresse">Nombre d'intéressés:</label>
+    <input type="number" id="nbrInteresse" formControlName="nbrInteresse">
+    <div *ngIf="stageForm.get('nbrInteresse')?.invalid && stageForm.get('nbrInteresse')?.touched" class="error">
+      <small *ngIf="stageForm.get('nbrInteresse')?.errors?.['required']">Le nombre d'intéressés est obligatoire.</small>
+    </div>
+  </div>
+
+  <fieldset>
+    <legend>Filtrage & compatibilité</legend>
+    <div>
+      <label for="location">Localisation (ville/région):</label>
+      <input type="text" id="location" formControlName="location">
+    </div>
+
+    <div>
+      <label for="mode">Mode:</label>
+      <select id="mode" formControlName="mode">
+        <option value="onsite">Présentiel</option>
+        <option value="remote">Remote</option>
+        <option value="hybrid">Hybride</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="durationMonths">Durée (mois):</label>
+      <input type="number" id="durationMonths" formControlName="durationMonths" min="1">
+    </div>
+
+    <div>
+      <label for="startDate">Date de début:</label>
+      <input type="date" id="startDate" formControlName="startDate">
+    </div>
+
+    <div>
+      <label for="domain">Domaine:</label>
+      <input type="text" id="domain" formControlName="domain" placeholder="ex: web, data, cloud">
+    </div>
+
+    <div>
+      <label for="educationLevel">Niveau d'études:</label>
+      <input type="text" id="educationLevel" formControlName="educationLevel" placeholder="Licence, Master...">
+    </div>
+
+    <div>
+      <label for="minExperienceYears">Expérience min (années):</label>
+      <input type="number" id="minExperienceYears" formControlName="minExperienceYears" min="0">
+    </div>
+
+    <div>
+      <label for="requiredSkills">Compétences requises (séparées par des virgules):</label>
+      <input type="text" id="requiredSkills" formControlName="requiredSkills" placeholder="Angular, TypeScript, REST">
+    </div>
+
+    <div>
+      <label for="niceToHaveSkills">Compétences bonus (séparées par des virgules):</label>
+      <input type="text" id="niceToHaveSkills" formControlName="niceToHaveSkills" placeholder="Docker, AWS">
+    </div>
+
+    <div>
+      <label for="languages">Langues (séparées par des virgules):</label>
+      <input type="text" id="languages" formControlName="languages" placeholder="Français, Anglais">
+    </div>
+
+    <div>
+      <label for="salaryRange">Fourchette de rémunération:</label>
+      <input type="text" id="salaryRange" formControlName="salaryRange" placeholder="Ex: 800-1200 TND">
+    </div>
+  </fieldset>
+
+  <button type="submit" [disabled]="stageForm.invalid">Ajouter</button>
+  <button type="button" routerLink="/stages">Annuler</button>
+</form>

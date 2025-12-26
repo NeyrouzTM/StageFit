@@ -1,0 +1,80 @@
+<section class="advisor">
+  <header>
+    <h2>Assistant IA - Trouve le stage adapté</h2>
+    <p>Indique ton profil et tes compétences. L'assistant calcule la meilleure correspondance et une probabilité d'acceptation.</p>
+  </header>
+
+  <form [formGroup]="advisorForm" (ngSubmit)="onSubmit()" class="advisor-form">
+    <div>
+      <label for="nom">Nom</label>
+      <input id="nom" type="text" formControlName="nom" placeholder="Votre nom">
+      <small *ngIf="advisorForm.get('nom')?.invalid && advisorForm.get('nom')?.touched">Champ obligatoire</small>
+    </div>
+
+    <div>
+      <label for="profil">Profil / rôle</label>
+      <input id="profil" type="text" formControlName="profil" placeholder="Ex: Frontend, Data, DevOps">
+      <small *ngIf="advisorForm.get('profil')?.invalid && advisorForm.get('profil')?.touched">Champ obligatoire</small>
+    </div>
+
+    <div class="full">
+      <label for="competences">Compétences principales (séparées par des virgules)</label>
+      <textarea id="competences" rows="2" formControlName="competences" placeholder="Angular, TypeScript, REST, Docker"></textarea>
+      <small *ngIf="advisorForm.get('competences')?.invalid && advisorForm.get('competences')?.touched">Indique au moins une compétence</small>
+    </div>
+
+    <div>
+      <label for="langues">Langues</label>
+      <input id="langues" type="text" formControlName="langues" placeholder="Français, Anglais">
+    </div>
+
+    <div>
+      <label for="localisation">Localisation souhaitée</label>
+      <input id="localisation" type="text" formControlName="localisation" placeholder="Tunis, Remote...">
+    </div>
+
+    <div>
+      <label for="mode">Mode préféré</label>
+      <select id="mode" formControlName="mode">
+        <option value="any">Peu importe</option>
+        <option value="onsite">Présentiel</option>
+        <option value="remote">Remote</option>
+        <option value="hybrid">Hybride</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="experience">Années d'expérience</label>
+      <input id="experience" type="number" formControlName="experience" min="0" step="0.5">
+    </div>
+
+    <button type="submit" [disabled]="advisorForm.invalid || loading">Analyser</button>
+  </form>
+
+  <div *ngIf="loading" class="info">Analyse en cours...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <section *ngIf="!loading && results.length" class="results">
+    <h3>Top recommandations</h3>
+    <article *ngFor="let r of results" class="result-card">
+      <header>
+        <div>
+          <h4>{{ r.stage.titre }}</h4>
+          <div class="meta">{{ r.stage.entreprise }} • {{ r.stage.location || 'Localisation non précisée' }} • {{ r.stage.mode || 'mode non spécifié' }}</div>
+        </div>
+        <div class="score">{{ r.acceptance }}% d'acceptation estimée</div>
+      </header>
+
+      <p class="desc">{{ r.stage.description }}</p>
+
+      <div class="chips">
+        <span class="chip" *ngFor="let skill of r.matchedSkills">{{ skill }}</span>
+        <span class="chip missing" *ngFor="let skill of r.missingSkills">Manque: {{ skill }}</span>
+      </div>
+
+      <ul class="reasons">
+        <li *ngFor="let reason of r.reasons">{{ reason }}</li>
+      </ul>
+    </article>
+  </section>
+</section>

@@ -1,0 +1,39 @@
+.apply {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 16px;
+  max-width: 520px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+label {
+  display: block;
+  margin: 10px 0 4px;
+  font-weight: 600;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #0b5ed7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #9fb9f0;
+  cursor: not-allowed;
+}
+
+.error { color: #d9534f; }
+.success { color: #2ba84a; }

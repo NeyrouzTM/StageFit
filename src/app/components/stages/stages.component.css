@@ -1,0 +1,136 @@
+h2 {
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.stage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.stage-card {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stage-card header h3 {
+  margin: 0;
+}
+
+.card-header {
+  display: grid;
+  gap: 4px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px 4px;
+}
+
+.icon {
+  font-size: 1.1rem;
+  color: #777;
+}
+
+.icon.fav {
+  color: #f5a623; /* orange star */
+}
+
+.meta {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.desc {
+  margin: 12px 0;
+  color: #333;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.chip {
+  background: #e8f1ff;
+  color: #0b5ed7;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.chip.bonus {
+  background: #f1f3f5;
+  color: #495057;
+}
+
+.chip.lang {
+  background: #e7f7ee;
+  color: #0a7b3b;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.badge-green {
+  background: #2ba84a;
+}
+
+.badge-red {
+  background: #d9534f;
+}
+
+.actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #0b5ed7;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.btn.ghost {
+  background: #eef3ff;
+  color: #0b5ed7;
+}
+
+.card-actions{
+  display:flex;
+  gap:8px;
+  margin-top:8px;
+}

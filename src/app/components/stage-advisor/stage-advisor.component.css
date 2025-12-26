@@ -1,0 +1,116 @@
+.advisor {
+  background: #fdfdfd;
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.advisor-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px 16px;
+  margin: 12px 0 18px;
+}
+
+.advisor-form .full {
+  grid-column: 1 / -1;
+}
+
+.advisor-form label {
+  font-weight: 600;
+}
+
+.advisor-form input,
+.advisor-form textarea,
+.advisor-form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.advisor-form button {
+  grid-column: 1 / -1;
+  padding: 10px 12px;
+  background: #0b5ed7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.advisor-form button:disabled {
+  background: #94b5f5;
+  cursor: not-allowed;
+}
+
+.info {
+  color: #0b5ed7;
+}
+
+.error {
+  color: #d9534f;
+}
+
+.results {
+  margin-top: 12px;
+}
+
+.result-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #fff;
+}
+
+.result-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.result-card .meta {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.score {
+  background: #e8f1ff;
+  color: #0b5ed7;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.desc {
+  margin: 10px 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: #e7f7ee;
+  color: #0a7b3b;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+}
+
+.chip.missing {
+  background: #fff1e6;
+  color: #c56a00;
+}
+
+.reasons {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: #444;
+}

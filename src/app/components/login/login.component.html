@@ -1,0 +1,18 @@
+<section class="login">
+  <h2>Connexion</h2>
+  <p>Connectez-vous avec votre email et mot de passe.</p>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <label>Email</label>
+    <input type="email" formControlName="email" placeholder="vous@example.com">
+    <small *ngIf="form.get('email')?.invalid && form.get('email')?.touched">Email valide requis</small>
+
+    <label>Mot de passe</label>
+    <input type="password" formControlName="password" placeholder="••••••">
+    <small *ngIf="form.get('password')?.invalid && form.get('password')?.touched">Mot de passe requis</small>
+
+    <div class="error" *ngIf="error">{{ error }}</div>
+
+    <button type="submit" [disabled]="form.invalid || loading">Se connecter</button>
+  </form>
+</section>

@@ -1,0 +1,25 @@
+<section class="signup">
+  <h2>Créer un compte</h2>
+  <p>Inscrivez-vous comme recruteur (ajout/édition) ou candidat (consultation/postuler).</p>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <label>Email</label>
+    <input type="email" formControlName="email" placeholder="vous@example.com">
+    <small *ngIf="form.get('email')?.invalid && form.get('email')?.touched">Email valide requis</small>
+
+    <label>Mot de passe</label>
+    <input type="password" formControlName="password" placeholder="••••">
+    <small *ngIf="form.get('password')?.invalid && form.get('password')?.touched">Min 4 caractères</small>
+
+    <label>Rôle</label>
+    <select formControlName="role">
+      <option value="recruteur">Recruteur</option>
+      <option value="candidat">Candidat</option>
+    </select>
+
+    <div class="error" *ngIf="error">{{ error }}</div>
+    <div class="success" *ngIf="success">{{ success }}</div>
+
+    <button type="submit" [disabled]="form.invalid || loading">Créer le compte</button>
+  </form>
+</section>

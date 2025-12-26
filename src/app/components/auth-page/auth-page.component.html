@@ -1,0 +1,20 @@
+<section class="auth-page">
+  <header>
+    <h2>Authentification</h2>
+    <p>Créez votre compte puis connectez-vous pour accéder aux fonctionnalités adaptées à votre rôle.</p>
+  </header>
+
+  <div class="tabs">
+    <button [class.active]="mode === 'login'" (click)="switchTo('login')">Se connecter</button>
+    <button [class.active]="mode === 'signup'" (click)="switchTo('signup')">Créer un compte</button>
+  </div>
+
+  <div class="panes">
+    <div *ngIf="mode === 'login'" class="pane">
+      <app-login></app-login>
+    </div>
+    <div *ngIf="mode === 'signup'" class="pane">
+      <app-signup></app-signup>
+    </div>
+  </div>
+</section>

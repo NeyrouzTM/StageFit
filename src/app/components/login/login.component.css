@@ -1,0 +1,33 @@
+.login {
+  max-width: 360px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+label {
+  display: block;
+  margin: 10px 0 4px;
+  font-weight: 600;
+}
+input, select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+button {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #0b5ed7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:disabled {
+  background: #9fb9f0;
+  cursor: not-allowed;
+}
+small { color: #d9534f; }

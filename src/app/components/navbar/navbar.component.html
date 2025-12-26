@@ -1,0 +1,20 @@
+<nav class="navbar">
+  <div class="brand">
+    <img src="stagefit-logo.svg" alt="StageFit" class="brand-logo" onerror="this.style.display='none'">
+    <a routerLink="/stages" class="brand-name">StageFit</a>
+  </div>
+  <div class="links">
+    <a routerLink="/stages">Consulter les stages</a>
+    <a routerLink="/advisor">Assistant IA</a>
+    <ng-container *ngIf="user$ | async as user; else guest">
+      <span *ngIf="user.role === 'recruteur'">
+        <a routerLink="/add-stage">Ajouter un stage</a>
+      </span>
+      <button type="button" class="logout" (click)="logout()">Se déconnecter ({{ user.role }})</button>
+    </ng-container>
+    <ng-template #guest>
+      <a routerLink="/auth">Authentification</a>
+    </ng-template>
+  </div>
+</nav>
+<hr>

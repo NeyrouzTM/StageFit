@@ -1,0 +1,169 @@
+{
+  "stages": [
+    {
+      "ref": 1,
+      "titre": "Stage développement web Angular",
+      "description": "Développement d'une SPA Angular 18 avec composants standalone et RxJS.",
+      "entreprise": "Esprit",
+      "disponible": true,
+      "nbrInteresse": 5,
+      "location": "Tunis",
+      "mode": "onsite",
+      "durationMonths": 4,
+      "startDate": "2025-02-15",
+      "domain": "web",
+      "educationLevel": "Licence",
+      "minExperienceYears": 0,
+      "requiredSkills": [
+        "angular",
+        "typescript",
+        "html",
+        "css",
+        "rest"
+      ],
+      "niceToHaveSkills": [
+        "rxjs",
+        "jest",
+        "docker"
+      ],
+      "languages": [
+        "français",
+        "anglais"
+      ],
+      "salaryRange": "800-1000 TND"
+    },
+    {
+      "ref": 2,
+      "titre": "Stage Data & BI",
+      "description": "Mise en place de dashboards Power BI et pipelines ETL Python.",
+      "entreprise": "DataSense",
+      "disponible": true,
+      "nbrInteresse": 3,
+      "location": "Remote",
+      "mode": "remote",
+      "durationMonths": 6,
+      "startDate": "2025-03-01",
+      "domain": "data",
+      "educationLevel": "Master",
+      "minExperienceYears": 1,
+      "requiredSkills": [
+        "python",
+        "sql",
+        "power bi",
+        "etl"
+      ],
+      "niceToHaveSkills": [
+        "airflow",
+        "azure"
+      ],
+      "languages": [
+        "français",
+        "anglais"
+      ],
+      "salaryRange": "1000-1300 TND"
+    },
+    {
+      "ref": 3,
+      "titre": "Stage DevOps & Cloud",
+      "description": "Automatisation CI/CD, conteneurisation et déploiement sur AWS.",
+      "entreprise": "CloudBridge",
+      "disponible": false,
+      "nbrInteresse": 8,
+      "location": "Sfax",
+      "mode": "hybrid",
+      "durationMonths": 5,
+      "startDate": "2025-04-01",
+      "domain": "cloud",
+      "educationLevel": "Licence",
+      "minExperienceYears": 1,
+      "requiredSkills": [
+        "docker",
+        "kubernetes",
+        "ci/cd",
+        "git"
+      ],
+      "niceToHaveSkills": [
+        "aws",
+        "terraform",
+        "prometheus"
+      ],
+      "languages": [
+        "français"
+      ],
+      "salaryRange": "1200-1500 TND",
+      "calendarLink": "https://calendly.com/devops-interview"
+    },
+    {
+      "ref": 4,
+      "titre": "Stage Mobile Flutter",
+      "description": "Développement d'une application mobile Flutter avec intégration d'API.",
+      "entreprise": "MobilityX",
+      "disponible": true,
+      "nbrInteresse": 2,
+      "location": "Remote",
+      "mode": "remote",
+      "durationMonths": 3,
+      "startDate": "2025-01-20",
+      "domain": "mobile",
+      "educationLevel": "Licence",
+      "minExperienceYears": 0,
+      "requiredSkills": [
+        "flutter",
+        "dart",
+        "rest"
+      ],
+      "niceToHaveSkills": [
+        "firebase",
+        "bloc"
+      ],
+      "languages": [
+        "français",
+        "anglais"
+      ],
+      "salaryRange": "700-900 TND",
+      "calendarLink": "https://calendly.com/mobile-interview"
+    }
+  ],
+  "applications": [
+    {
+      "id": "demo-1",
+      "stageRef": 1,
+      "candidatNom": "Demo User",
+      "candidatEmail": "demo@example.com",
+      "status": "envoye",
+      "createdAt": "2024-12-01T10:00:00.000Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "recruteur@example.com",
+      "password": "pass1234",
+      "role": "recruteur"
+    },
+    {
+      "id": 2,
+      "email": "candidat@example.com",
+      "password": "pass1234",
+      "role": "candidat"
+    },
+    {
+      "id": "f77a",
+      "email": "neyrouztoumi02@gmail.com",
+      "password": "1234",
+      "role": "candidat"
+    },
+    {
+      "id": "832f",
+      "email": "test@recruteur.com",
+      "password": "1478",
+      "role": "recruteur"
+    },
+    {
+      "id": "c3cf",
+      "email": "toumineyrouz@gmail.com",
+      "password": "123456789",
+      "role": "recruteur"
+    }
+  ]
+}

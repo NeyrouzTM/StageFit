@@ -1,0 +1,34 @@
+<section class="apply">
+  <h2>Postuler au stage</h2>
+  <p *ngIf="stage">{{ stage.titre }} • {{ stage.entreprise }}</p>
+  <p *ngIf="stage?.location || stage?.mode">{{ stage?.location || 'Localisation non précisée' }} • {{ stage?.mode || 'mode non spécifié' }}</p>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div *ngIf="success" class="success">{{ success }}</div>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <label>Nom complet
+      <input type="text" formControlName="candidatNom">
+    </label>
+    <small *ngIf="form.get('candidatNom')?.invalid && form.get('candidatNom')?.touched">Nom obligatoire</small>
+
+    <label>Email
+      <input type="email" formControlName="candidatEmail">
+    </label>
+    <small *ngIf="form.get('candidatEmail')?.invalid && form.get('candidatEmail')?.touched">Email valide requis</small>
+
+    <label>CV (URL)
+      <input type="url" formControlName="cvUrl" placeholder="Lien vers votre CV (Drive, Github, ...)">
+    </label>
+
+    <label>Portfolio (URL)
+      <input type="url" formControlName="portfolioUrl" placeholder="Lien portfolio ou LinkedIn">
+    </label>
+
+    <label>Notes internes
+      <textarea rows="3" formControlName="notes" placeholder="Message, disponibilité, préférences..."></textarea>
+    </label>
+
+    <button type="submit" [disabled]="submitting || form.invalid">Envoyer</button>
+  </form>
+</section>

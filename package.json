@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:testangular": "node dist/testangular/server/server.mjs"
+    "serve:ssr:testangular": "node dist/testangular/server/server.mjs",
+    "json": "json-server --watch src/db.json --port 3001"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,24 @@
+h2 {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 50px;
+}
+
+p {
+  text-align: center;
+  font-size: 1.2em;
+  color: #666;
+}
+
+a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}

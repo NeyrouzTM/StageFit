@@ -1,0 +1,77 @@
+<h2>Liste des stages</h2>
+
+<app-stage-filters (filtersChange)="onFiltersChange($event)"></app-stage-filters>
+
+<div style="margin: 8px 0;">
+  <button *ngIf="isRecruiter" routerLink="/add-stage">Ajouter un nouveau stage</button>
+  <button (click)="exportCsv()" style="margin-left: 8px;">Exporter CSV</button>
+  <button routerLink="/advisor" style="margin-left: 8px;">Assistant IA</button>
+  <a routerLink="/auth" style="margin-left: 8px;">Authentification</a>
+  <a routerLink="/apply/1" style="margin-left: 8px;">Postuler (exemple)</a>
+  <a routerLink="/advisor" style="margin-left: 8px;"></a>
+  
+</div>
+
+<div *ngIf="stages.length === 0">
+  <p>Aucun stage disponible pour le moment.</p>
+  <p>Ajoutez un stage pour commencer.</p>
+  <a routerLink="/add-stage">Ajouter un stage</a>
+  <hr>
+</div>
+
+<div *ngIf="stages.length > 0">
+  <div class="stage-grid">
+    <article class="stage-card" *ngFor="let s of stages">
+      <header class="card-header">
+        <h3 class="title">
+          {{ s.titre }}
+          <button class="icon-btn" (click)="toggleFavorite(s.ref)" [attr.aria-label]="isFavorite(s.ref) ? 'Retirer des favoris' : 'Ajouter aux favoris'">
+            <span class="icon" [class.fav]="isFavorite(s.ref)">{{ isFavorite(s.ref) ? '★' : '☆' }}</span>
+          </button>
+        </h3>
+        <div class="meta">{{ s.entreprise }} • {{ s.domain || 'N/A' }}</div>
+        <div class="meta">{{ s.location || 'Localisation non précisée' }} • {{ s.mode || 'mode non spécifié' }}</div>
+      </header>
+
+      <p class="desc">{{ s.description }}</p>
+
+      <div class="chips">
+        <strong>Compétences requises :</strong>
+        <span class="chip" *ngFor="let skill of s.requiredSkills">{{ skill }}</span>
+      </div>
+
+      <div class="chips" *ngIf="s.niceToHaveSkills?.length">
+        <strong>Bonus :</strong>
+        <span class="chip bonus" *ngFor="let skill of s.niceToHaveSkills">{{ skill }}</span>
+      </div>
+
+      <div class="chips" *ngIf="s.languages?.length">
+        <strong>Langues :</strong>
+        <span class="chip lang" *ngFor="let lang of s.languages">{{ lang }}</span>
+      </div>
+
+      <div class="details">
+        <span>Durée: {{ s.durationMonths || '?' }} mois</span>
+        <span>Début: {{ s.startDate || 'à définir' }}</span>
+        <span>Niveau: {{ s.educationLevel || 'non précisé' }}</span>
+        <span>Exp. min: {{ s.minExperienceYears || 0 }} an(s)</span>
+        <span>Intéressés: {{ s.nbrInteresse }}</span>
+        <span *ngIf="s.salaryRange">Rémunération: {{ s.salaryRange }}</span>
+      </div>
+
+      <footer>
+        <span class="badge" [class.badge-green]="s.disponible" [class.badge-red]="!s.disponible">
+          {{ s.disponible ? 'Ouvert' : 'Fermé' }}
+        </span>
+        <div class="actions">
+          <a [routerLink]="['/apply', s.ref]" class="btn">Postuler</a>
+          <a *ngIf="s.calendarLink" [href]="s.calendarLink" target="_blank" rel="noopener" class="btn ghost">Planifier</a>
+        </div>
+      </footer>
+      <div class="card-actions">
+        <a [routerLink]="['/apply', s.ref]" class="btn">Postuler</a>
+        <a *ngIf="s.calendarLink" [href]="s.calendarLink" target="_blank" rel="noopener" class="btn ghost">Planifier</a>
+      </div>
+    </article>
+  </div>
+</div>

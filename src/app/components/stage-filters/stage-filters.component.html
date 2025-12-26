@@ -1,0 +1,24 @@
+<form [formGroup]="form" class="filters">
+  <input type="text" formControlName="search" placeholder="Recherche (titre, entreprise, description)">
+  <input type="text" formControlName="domain" placeholder="Domaine (web, data, cloud)">
+  <select formControlName="mode">
+    <option value="any">Mode (tous)</option>
+    <option value="onsite">Présentiel</option>
+    <option value="remote">Remote</option>
+    <option value="hybrid">Hybride</option>
+  </select>
+  <input type="text" formControlName="location" placeholder="Localisation">
+  <input type="number" formControlName="minExperienceYears" min="0" placeholder="Exp. min (années)">
+  <input type="text" formControlName="requiredSkill" placeholder="Compétence requise (ex: angular)">
+
+  <label class="inline">
+    <input type="checkbox" formControlName="availableOnly">
+    Disponibles uniquement
+  </label>
+  <label class="inline">
+    <input type="checkbox" formControlName="onlyFavorites">
+    Mes favoris
+  </label>
+
+  <button type="button" (click)="reset()">Réinitialiser</button>
+</form>
